@@ -1,0 +1,453 @@
+@prefix : <http://www.semanticweb.org/owl/owlapi/turtle#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dbsnp: <http://bio2rdf.org/dbsnp:> .
+@prefix ra-vocabulary: <http://bio2rdf.org/ra.challenge_vocabulary:> .
+@base <http://example.info/ra.schema.ttl> .
+
+<http://example.info/ra.schema.ttl> rdf:type owl:Ontology .
+
+
+#################################################################
+#
+#    Object Properties
+#
+#################################################################
+
+
+###  http://bio2rdf.org/ra.challenge_vocabulary:drug
+
+ra-vocabulary:drug rdf:type owl:ObjectProperty ;
+                   
+                   rdfs:range <http://bio2rdf.org/ra.challenge:Drug> ;
+                   
+                   rdfs:domain <http://xmlns.com/foaf/0.1/Person> .
+
+
+
+###  http://bio2rdf.org/ra.challenge_vocabulary:gender
+
+ra-vocabulary:gender rdf:type owl:ObjectProperty ;
+                     
+                     rdfs:range ra-vocabulary:Gender ;
+                     
+                     rdfs:domain <http://xmlns.com/foaf/0.1/Person> .
+
+
+
+###  http://bio2rdf.org/ra.challenge_vocabulary:has-at-least-one
+
+ra-vocabulary:has-at-least-one rdf:type owl:ObjectProperty ;
+                               
+                               rdfs:range ra-vocabulary:Polymorphism ;
+                               
+                               rdfs:domain <http://xmlns.com/foaf/0.1/Person> .
+
+
+
+###  http://bio2rdf.org/ra.challenge_vocabulary:has-one
+
+ra-vocabulary:has-one rdf:type owl:ObjectProperty ;
+                      
+                      rdfs:subPropertyOf ra-vocabulary:has-at-least-one ;
+                      
+                      owl:propertyDisjointWith ra-vocabulary:has-two .
+
+
+
+###  http://bio2rdf.org/ra.challenge_vocabulary:has-two
+
+ra-vocabulary:has-two rdf:type owl:ObjectProperty ;
+                      
+                      rdfs:subPropertyOf ra-vocabulary:has-at-least-one .
+
+
+
+
+
+#################################################################
+#
+#    Data properties
+#
+#################################################################
+
+
+###  http://bio2rdf.org/ra.challenge_vocabulary:age
+
+ra-vocabulary:age rdf:type owl:DatatypeProperty .
+
+
+
+###  http://bio2rdf.org/ra.challenge_vocabulary:methotrexate-cotherapy
+
+ra-vocabulary:methotrexate-cotherapy rdf:type owl:DatatypeProperty ;
+                                     
+                                     rdfs:range xsd:boolean .
+
+
+
+###  http://bio2rdf.org/ra.challenge_vocabulary:non-responder
+
+ra-vocabulary:non-responder rdf:type owl:DatatypeProperty ;
+                            
+                            rdfs:range xsd:boolean .
+
+
+
+
+
+#################################################################
+#
+#    Classes
+#
+#################################################################
+
+
+###  http://bio2rdf.org/dbsnp:rs10985070
+
+dbsnp:rs10985070 rdf:type owl:Class ;
+                 
+                 rdfs:subClassOf ra-vocabulary:Polymorphism .
+
+
+
+###  http://bio2rdf.org/dbsnp:rs11574914
+
+dbsnp:rs11574914 rdf:type owl:Class ;
+                 
+                 rdfs:subClassOf ra-vocabulary:Polymorphism .
+
+
+
+###  http://bio2rdf.org/dbsnp:rs11889341
+
+dbsnp:rs11889341 rdf:type owl:Class ;
+                 
+                 rdfs:subClassOf ra-vocabulary:Polymorphism .
+
+
+
+###  http://bio2rdf.org/dbsnp:rs13330176
+
+dbsnp:rs13330176 rdf:type owl:Class ;
+                 
+                 rdfs:subClassOf ra-vocabulary:Polymorphism .
+
+
+
+###  http://bio2rdf.org/dbsnp:rs1571878
+
+dbsnp:rs1571878 rdf:type owl:Class ;
+                
+                rdfs:subClassOf ra-vocabulary:Polymorphism .
+
+
+
+###  http://bio2rdf.org/dbsnp:rs1877030
+
+dbsnp:rs1877030 rdf:type owl:Class ;
+                
+                rdfs:subClassOf ra-vocabulary:Polymorphism .
+
+
+
+###  http://bio2rdf.org/dbsnp:rs1893592
+
+dbsnp:rs1893592 rdf:type owl:Class ;
+                
+                rdfs:subClassOf ra-vocabulary:Polymorphism .
+
+
+
+###  http://bio2rdf.org/dbsnp:rs1980422
+
+dbsnp:rs1980422 rdf:type owl:Class ;
+                
+                rdfs:subClassOf ra-vocabulary:Polymorphism .
+
+
+
+###  http://bio2rdf.org/dbsnp:rs227163
+
+dbsnp:rs227163 rdf:type owl:Class ;
+               
+               rdfs:subClassOf ra-vocabulary:Polymorphism .
+
+
+
+###  http://bio2rdf.org/dbsnp:rs2301888
+
+dbsnp:rs2301888 rdf:type owl:Class ;
+                
+                rdfs:subClassOf ra-vocabulary:Polymorphism .
+
+
+
+###  http://bio2rdf.org/dbsnp:rs2451258
+
+dbsnp:rs2451258 rdf:type owl:Class ;
+                
+                rdfs:subClassOf ra-vocabulary:Polymorphism .
+
+
+
+###  http://bio2rdf.org/dbsnp:rs2476601
+
+dbsnp:rs2476601 rdf:type owl:Class ;
+                
+                rdfs:subClassOf ra-vocabulary:Polymorphism .
+
+
+
+###  http://bio2rdf.org/dbsnp:rs2671692
+
+dbsnp:rs2671692 rdf:type owl:Class ;
+                
+                rdfs:subClassOf ra-vocabulary:Polymorphism .
+
+
+
+###  http://bio2rdf.org/dbsnp:rs3087243
+
+dbsnp:rs3087243 rdf:type owl:Class ;
+                
+                rdfs:subClassOf ra-vocabulary:Polymorphism .
+
+
+
+###  http://bio2rdf.org/dbsnp:rs331463
+
+dbsnp:rs331463 rdf:type owl:Class ;
+               
+               rdfs:subClassOf ra-vocabulary:Polymorphism .
+
+
+
+###  http://bio2rdf.org/dbsnp:rs4239702
+
+dbsnp:rs4239702 rdf:type owl:Class ;
+                
+                rdfs:subClassOf ra-vocabulary:Polymorphism .
+
+
+
+###  http://bio2rdf.org/dbsnp:rs4272
+
+dbsnp:rs4272 rdf:type owl:Class ;
+             
+             rdfs:subClassOf ra-vocabulary:Polymorphism .
+
+
+
+###  http://bio2rdf.org/dbsnp:rs4656942
+
+dbsnp:rs4656942 rdf:type owl:Class ;
+                
+                rdfs:subClassOf ra-vocabulary:Polymorphism .
+
+
+
+###  http://bio2rdf.org/dbsnp:rs508970
+
+dbsnp:rs508970 rdf:type owl:Class ;
+               
+               rdfs:subClassOf ra-vocabulary:Polymorphism .
+
+
+
+###  http://bio2rdf.org/dbsnp:rs624988
+
+dbsnp:rs624988 rdf:type owl:Class ;
+               
+               rdfs:subClassOf ra-vocabulary:Polymorphism .
+
+
+
+###  http://bio2rdf.org/dbsnp:rs657075
+
+dbsnp:rs657075 rdf:type owl:Class ;
+               
+               rdfs:subClassOf ra-vocabulary:Polymorphism .
+
+
+
+###  http://bio2rdf.org/dbsnp:rs706778
+
+dbsnp:rs706778 rdf:type owl:Class ;
+               
+               rdfs:subClassOf ra-vocabulary:Polymorphism .
+
+
+
+###  http://bio2rdf.org/dbsnp:rs7752903
+
+dbsnp:rs7752903 rdf:type owl:Class ;
+                
+                rdfs:subClassOf ra-vocabulary:Polymorphism .
+
+
+
+###  http://bio2rdf.org/dbsnp:rs8032939
+
+dbsnp:rs8032939 rdf:type owl:Class ;
+                
+                rdfs:subClassOf ra-vocabulary:Polymorphism .
+
+
+
+###  http://bio2rdf.org/dbsnp:rs9653442
+
+dbsnp:rs9653442 rdf:type owl:Class ;
+                
+                rdfs:subClassOf ra-vocabulary:Polymorphism .
+
+
+
+###  http://bio2rdf.org/dbsnp:rs968567
+
+dbsnp:rs968567 rdf:type owl:Class ;
+               
+               rdfs:subClassOf ra-vocabulary:Polymorphism .
+
+
+
+###  http://bio2rdf.org/ra.challenge:Drug
+
+<http://bio2rdf.org/ra.challenge:Drug> rdf:type owl:Class .
+
+
+
+###  http://bio2rdf.org/ra.challenge_vocabulary:Gender
+
+ra-vocabulary:Gender rdf:type owl:Class .
+
+
+
+###  http://bio2rdf.org/ra.challenge_vocabulary:Polymorphism
+
+ra-vocabulary:Polymorphism rdf:type owl:Class .
+
+
+
+###  http://xmlns.com/foaf/0.1/Person
+
+<http://xmlns.com/foaf/0.1/Person> rdf:type owl:Class ;
+                                   
+                                   rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                     owl:onProperty ra-vocabulary:gender ;
+                                                     owl:someValuesFrom ra-vocabulary:Gender
+                                                   ] .
+
+
+
+
+
+#################################################################
+#
+#    Individuals
+#
+#################################################################
+
+
+###  http://bio2rdf.org/drugbank:DB00005
+
+<http://bio2rdf.org/drugbank:DB00005> rdf:type <http://bio2rdf.org/ra.challenge:Drug> ,
+                                               owl:NamedIndividual .
+
+
+
+###  http://bio2rdf.org/drugbank:DB00051
+
+<http://bio2rdf.org/drugbank:DB00051> rdf:type <http://bio2rdf.org/ra.challenge:Drug> ,
+                                               owl:NamedIndividual .
+
+
+
+###  http://bio2rdf.org/drugbank:DB00065
+
+<http://bio2rdf.org/drugbank:DB00065> rdf:type <http://bio2rdf.org/ra.challenge:Drug> ,
+                                               owl:NamedIndividual .
+
+
+
+###  http://bio2rdf.org/ra.challenge_vocabulary:Female
+
+ra-vocabulary:Female rdf:type ra-vocabulary:Gender ,
+                              owl:NamedIndividual .
+
+
+
+###  http://bio2rdf.org/ra.challenge_vocabulary:Male
+
+ra-vocabulary:Male rdf:type ra-vocabulary:Gender ,
+                            owl:NamedIndividual .
+
+
+
+
+
+#################################################################
+#
+#    General axioms
+#
+#################################################################
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( <http://bio2rdf.org/ra.challenge:Drug>
+                ra-vocabulary:Gender
+                ra-vocabulary:Polymorphism
+                <http://xmlns.com/foaf/0.1/Person>
+              )
+] .
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( ra-vocabulary:Female
+                        ra-vocabulary:Male
+                      )
+] .
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( <http://bio2rdf.org/drugbank:DB00005>
+                        <http://bio2rdf.org/drugbank:DB00051>
+                        <http://bio2rdf.org/drugbank:DB00065>
+                        ra-vocabulary:Female
+                        ra-vocabulary:Male
+                      )
+] .
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( dbsnp:rs10985070
+                dbsnp:rs11574914
+                dbsnp:rs11889341
+                dbsnp:rs13330176
+                dbsnp:rs1571878
+                dbsnp:rs1877030
+                dbsnp:rs1893592
+                dbsnp:rs1980422
+                dbsnp:rs227163
+                dbsnp:rs2301888
+                dbsnp:rs2451258
+                dbsnp:rs2476601
+                dbsnp:rs2671692
+                dbsnp:rs3087243
+                dbsnp:rs331463
+                dbsnp:rs4239702
+                dbsnp:rs4272
+                dbsnp:rs4656942
+                dbsnp:rs508970
+                dbsnp:rs624988
+                dbsnp:rs657075
+                dbsnp:rs706778
+                dbsnp:rs7752903
+                dbsnp:rs8032939
+                dbsnp:rs9653442
+                dbsnp:rs968567
+              )
+] .
+
+
+
+
+###  Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net
+
